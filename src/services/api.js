@@ -1,8 +1,12 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
+
+// Ensure base URL points to /api path
+const normalizedBase = API_BASE_URL.endsWith('/api') ? API_BASE_URL : `${API_BASE_URL.replace(/\/$/, '')}/api`;
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: normalizedBase,
   timeout: 10000, // 10 seconds timeout
   headers: {
     'Content-Type': 'application/json'
@@ -102,7 +106,8 @@ export const utils = {
   getImageUrl: (imagePath) => {
     if (!imagePath) return null;
     if (imagePath.startsWith('http')) return imagePath;
-    return `http://localhost:8080${imagePath}`;
+    // Use API_BASE_URL (without trailing slash) when building image URLs
+    return `${API_BASE_URL.replace(/\/$/, '')}${imagePath.startsWith('/') ? imagePath : `/${imagePath}`}`;
   }
 };
 

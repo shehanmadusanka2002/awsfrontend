@@ -1,5 +1,6 @@
 // API configuration
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+// Set default backend host to the provided IP; can be overridden with VITE_API_BASE_URL
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://54.173.35.19:8080';
 export const APP_ENV = import.meta.env.VITE_APP_ENV || 'development';
 
 // Other configuration variables can be added here

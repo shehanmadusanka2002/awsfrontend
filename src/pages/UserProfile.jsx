@@ -21,7 +21,7 @@ const UserProfile = () => {
     const [successMessage, setSuccessMessage] = useState('');
 
     // API base URL
-    const API_BASE_URL = 'http://localhost:8080';
+    import { API_BASE_URL } from '../config';
 
     useEffect(() => {
         // Add a small delay to ensure token is available after login

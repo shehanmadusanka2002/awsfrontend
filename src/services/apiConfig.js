@@ -1,5 +1,8 @@
-// API Configuration
-export const API_BASE_URL = 'http://localhost:8080/api';
+// API Configuration - use centralized config when available
+import { API_BASE_URL as BASE } from '../config';
+
+// Ensure exported API_BASE_URL points at the /api root
+export const API_BASE_URL = BASE.endsWith('/api') ? BASE : `${BASE.replace(/\/$/, '')}/api`;
 
 // API Endpoints
 export const API_ENDPOINTS = {
