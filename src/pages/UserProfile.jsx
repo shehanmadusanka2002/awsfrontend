@@ -8,6 +8,7 @@ import AddressSection from './../components/user-profile/AddressSection';
 import ActionButtons from '../components/user-profile/ActionButtons';
 import { districtToTowns } from '../components/user-profile/locationData';
 import { useAuth } from '../context/AuthContext';
+import { API_BASE_URL } from '../config';
 
 const UserProfile = () => {
     const { refreshUserData } = useAuth();
@@ -19,9 +20,6 @@ const UserProfile = () => {
     const [availableTowns, setAvailableTowns] = useState([]);
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
-
-    // API base URL
-    import { API_BASE_URL } from '../config';
 
     useEffect(() => {
         // Add a small delay to ensure token is available after login
