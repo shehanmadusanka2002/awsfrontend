@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API_BASE_URL as API_BASE } from '../config';
+import { API_BASE_URL } from '../config';
 import axios from 'axios';
 import Footer from './home/Footer';
 
@@ -133,11 +133,7 @@ const RegistrationForm = ({ setShowLogin }) => {
   useEffect(() => {
   const fetchRoles = async () => {
     try {
-<<<<<<< HEAD
-      const response = await axios.get('http://54.173.35.19:8080/api/users/roles');
-=======
-  const response = await axios.get(`${API_BASE}/users/roles`);
->>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
+      const response = await axios.get(`${API_BASE_URL}/api/users/roles`);
       // Filter out any admin role by value; update as needed based on your actual admin value
       setAvailableRoles(
         response.data.filter(role => role.value !== 'ADMIN')
@@ -311,11 +307,7 @@ const RegistrationForm = ({ setShowLogin }) => {
 
     try {
       setOtpMessage('Sending OTP...');
-<<<<<<< HEAD
-      const response = await axios.get(`http://54.173.35.19:8080/api/users/send-otp?email=${formData.email}`);
-=======
-  const response = await axios.get(`${API_BASE}/users/send-otp?email=${formData.email}`);
->>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
+      const response = await axios.get(`${API_BASE_URL}/api/users/send-otp?email=${formData.email}`);
       setOtpMessage(response.data.message);
       setOtpSent(true);
       setOtpVerified(false);
@@ -346,11 +338,7 @@ const RegistrationForm = ({ setShowLogin }) => {
     setOtpLoading(true);
 
     try {
-<<<<<<< HEAD
-      const response = await axios.post('http://54.173.35.19:8080/api/users/verify-otp', null, {
-=======
-  const response = await axios.post(`${API_BASE}/users/verify-otp`, null, {
->>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
+      const response = await axios.post(`${API_BASE_URL}/api/users/verify-otp`, null, {
         params: { email: formData.email, otp }
       });
       setOtpMessage(response.data.message);
@@ -467,11 +455,7 @@ const RegistrationForm = ({ setShowLogin }) => {
 
     try {
       const response = await axios.post(
-<<<<<<< HEAD
-        'http://54.173.35.19:8080/api/users/register',
-=======
-  `${API_BASE}/users/register`,
->>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
+        `${API_BASE_URL}/api/users/register`,
         formDataToSend,
         {
           headers: {
@@ -711,15 +695,14 @@ const RegistrationForm = ({ setShowLogin }) => {
                           <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Verifying...
-                        </div>
+                        </svg>
+                        Verifying...
                       ) : otpVerified ? (
                         <div className="flex items-center">
                           <svg className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                          Verified
+                        </svg>
+                        Verified
                         </div>
                       ) : 'Verify'}
                     </button>
@@ -1229,8 +1212,6 @@ const RegistrationForm = ({ setShowLogin }) => {
                         <>
                           <svg className="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                          </svg>
-                          Passwords don't match
                         </>
                       )}
                     </div>
@@ -1478,6 +1459,25 @@ const RegistrationForm = ({ setShowLogin }) => {
         <div className="text-center mt-8">
           <p className="text-gray-600">
             Already have an account?{" "}
+            <button
+              type="button"
+              onClick={() => setShowLogin(true)}
+              className="font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200"
+            >
+              Sign in here
+            </button>
+          </p>
+        </div> 
+        
+        <br></br>
+
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default RegistrationForm;
             <button
               type="button"
               onClick={() => setShowLogin(true)}
