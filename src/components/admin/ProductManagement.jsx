@@ -9,7 +9,7 @@ import {
 import axios from 'axios';
 
 // API Service integrated within the component
-const API_BASE_URL = 'http://localhost:8080/api/v1/fish';
+const API_BASE_URL = 'http://54.173.35.19:8080/api/v1/fish';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

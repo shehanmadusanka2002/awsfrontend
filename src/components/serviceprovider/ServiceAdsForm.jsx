@@ -15,7 +15,7 @@ const ServiceAdsForm = () => {
   const fetchServices = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/api/service-provider/services', {
+      const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -28,7 +28,7 @@ const ServiceAdsForm = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/api/service-provider/services/bookings', {
+      const response = await fetch('http://54.173.35.19:8080/api/service-provider/services/bookings', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -182,7 +182,7 @@ const BookingCard = ({ booking, onUpdate }) => {
     try {
       setIsUpdating(true);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8080/api/service-provider/services/bookings/${booking.id}`, {
+      const response = await fetch(`http://54.173.35.19:8080/api/service-provider/services/bookings/${booking.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -349,7 +349,7 @@ const AddServiceModal = ({ onClose, onSuccess }) => {
       console.log('Sending FormData with serviceData:', serviceData);
       console.log('Number of images:', images.length);
 
-      const response = await fetch('http://localhost:8080/api/service-provider/services', {
+      const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

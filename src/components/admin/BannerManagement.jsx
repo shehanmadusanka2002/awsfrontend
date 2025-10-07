@@ -13,7 +13,7 @@ const BannerManagement = () => {
 
   const fetchBanners = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/banners");
+      const response = await axios.get("http://54.173.35.19:8080/api/banners");
       setBanners(response.data);
     } catch (error) {
       console.error("Error fetching banners:", error);
@@ -45,7 +45,7 @@ const BannerManagement = () => {
       const formData = new FormData();
       formData.append("bannerImage", selectedFile);
 
-      await axios.post("http://localhost:8080/api/banners/upload", formData, {
+      await axios.post("http://54.173.35.19:8080/api/banners/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -67,7 +67,7 @@ const BannerManagement = () => {
   const handleDelete = async (bannerId) => {
     if (window.confirm("Are you sure you want to delete this banner?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/banners/${bannerId}`);
+        await axios.delete(`http://54.173.35.19:8080/api/banners/${bannerId}`);
         setMsg("Banner deleted successfully!");
         fetchBanners();
       } catch (error) {
@@ -144,7 +144,7 @@ const BannerManagement = () => {
             {banners.map((banner) => (
               <div key={banner.bannerId} className="border rounded-lg p-4">
                 <img
-                  src={`http://localhost:8080${banner.imageUrl}`}
+                  src={`http://54.173.35.19:8080${banner.imageUrl}`}
                   alt="Banner"
                   className="w-full h-32 object-cover rounded mb-3"
                 />

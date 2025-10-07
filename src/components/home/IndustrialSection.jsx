@@ -40,7 +40,7 @@ const IndustrialSection = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('http://localhost:8080/api/industrial', {
+      const response = await fetch('http://54.173.35.19:8080/api/industrial', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

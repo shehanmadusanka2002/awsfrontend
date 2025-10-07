@@ -11,7 +11,7 @@ const MyBookings = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/api/services/my-bookings', {
+      const response = await fetch('http://54.173.35.19:8080/api/services/my-bookings', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();

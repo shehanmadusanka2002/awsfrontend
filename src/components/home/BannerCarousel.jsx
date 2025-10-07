@@ -6,7 +6,7 @@ export default function BannerCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/banners")
+    axios.get("http://54.173.35.19:8080/api/banners")
       .then(res => {
         setBanners(res.data || []);
       })
@@ -53,7 +53,7 @@ export default function BannerCarousel() {
                 
                 {/* Background Image */}
                 <img
-                  src={`http://localhost:8080${banner.imageUrl}`}
+                  src={`http://54.173.35.19:8080${banner.imageUrl}`}
                   alt={`Banner ${index + 1}`}
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />

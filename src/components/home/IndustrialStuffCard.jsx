@@ -13,9 +13,9 @@ const IndustrialStuffCard = ({ industrial, onPurchaseSuccess }) => {
       return imagePath;
     }
     if (imagePath.startsWith('/uploads/')) {
-      return `http://localhost:8080${imagePath}`;
+      return `http://54.173.35.19:8080${imagePath}`;
     }
-    return `http://localhost:8080/uploads/${imagePath}`;
+    return `http://54.173.35.19:8080/uploads/${imagePath}`;
   };
 
   const formatPrice = (price) => {

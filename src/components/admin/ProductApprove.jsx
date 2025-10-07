@@ -11,7 +11,7 @@ const AdminDashboard = () => {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/products');
+      const response = await fetch('http://54.173.35.19:8080/api/products');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -23,7 +23,7 @@ const AdminDashboard = () => {
     const newStatus = currentStatus === 'ACTIVE' ? 'INACTIVE' : 'ACTIVE';
     
     try {
-      await fetch(`http://localhost:8080/api/products/${productId}/status?status=${newStatus}`, {
+      await fetch(`http://54.173.35.19:8080/api/products/${productId}/status?status=${newStatus}`, {
         method: 'PUT'
       });
       fetchAllProducts();

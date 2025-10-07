@@ -13,7 +13,7 @@ const ServicesManagement = () => {
   const fetchPendingServices = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/api/admin/services/pending', {
+      const response = await fetch('http://54.173.35.19:8080/api/admin/services/pending', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -28,7 +28,7 @@ const ServicesManagement = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8080/api/admin/services/stats', {
+      const response = await fetch('http://54.173.35.19:8080/api/admin/services/stats', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -41,7 +41,7 @@ const ServicesManagement = () => {
   const handleApprove = async (serviceId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8080/api/admin/services/${serviceId}/approve`, {
+      const response = await fetch(`http://54.173.35.19:8080/api/admin/services/${serviceId}/approve`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -60,7 +60,7 @@ const ServicesManagement = () => {
   const handleReject = async (serviceId, reason) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8080/api/admin/services/${serviceId}/reject`, {
+      const response = await fetch(`http://54.173.35.19:8080/api/admin/services/${serviceId}/reject`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ const AdminServiceCard = ({ service, onApprove, onReject }) => {
           {service.imagePaths && service.imagePaths.length > 0 && (
             <div className="w-24 h-24 rounded-lg overflow-hidden ml-4">
               <img
-                src={`http://localhost:8080${service.imagePaths[0]}`}
+                src={`http://54.173.35.19:8080${service.imagePaths[0]}`}
                 alt={service.name}
                 className="w-full h-full object-cover"
                 onError={(e) => {

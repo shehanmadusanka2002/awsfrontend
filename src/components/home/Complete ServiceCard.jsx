@@ -9,7 +9,7 @@ const ServiceCard = ({ service, onBookingSuccess }) => {
       // You can add booking logic here
       const token = localStorage.getItem('token');
       
-      const response = await fetch(`http://localhost:8080/api/services/${service.id}/book`, {
+      const response = await fetch(`http://54.173.35.19:8080/api/services/${service.id}/book`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const ServiceCard = ({ service, onBookingSuccess }) => {
       <div className="h-48 overflow-hidden">
         {service.imagePaths && service.imagePaths.length > 0 ? (
           <img
-            src={`http://localhost:8080${service.imagePaths[0]}`}
+            src={`http://54.173.35.19:8080${service.imagePaths[0]}`}
             alt={service.name}
             className="w-full h-full object-cover"
             onError={(e) => {

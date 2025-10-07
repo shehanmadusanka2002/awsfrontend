@@ -34,12 +34,12 @@ const ServiceCard = ({ service, onBookingSuccess }) => {
     }
 
     if (imagePath.startsWith('/uploads/')) {
-      const fullUrl = `http://localhost:8080${imagePath}`;
+      const fullUrl = `http://54.173.35.19:8080${imagePath}`;
       console.log("Constructed URL:", fullUrl);
       return fullUrl;
     }
 
-    const fullUrl = `http://localhost:8080/uploads/${imagePath}`;
+    const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
     console.log("Constructed URL (fallback):", fullUrl);
     return fullUrl;
   };
@@ -189,7 +189,7 @@ const BookingModal = ({ service, onClose, onBookingSuccess }) => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8080/api/services/${service.id}/book`, {
+      const response = await fetch(`http://54.173.35.19:8080/api/services/${service.id}/book`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

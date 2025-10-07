@@ -39,9 +39,9 @@ const ServicesSection = () => {
         size: cardsPerPage
       });
 
-      let url = 'http://localhost:8080/api/services';
+      let url = 'http://54.173.35.19:8080/api/services';
       if (selectedCategory) {
-        url = `http://localhost:8080/api/services/category/${selectedCategory}`;
+        url = `http://54.173.35.19:8080/api/services/category/${selectedCategory}`;
       }
 
       const response = await fetch(`${url}?${params}`);
@@ -66,7 +66,7 @@ const ServicesSection = () => {
         size: cardsPerPage * 10 // Get more results for search
       });
 
-      const response = await fetch(`http://localhost:8080/api/services/search?${params}`);
+      const response = await fetch(`http://54.173.35.19:8080/api/services/search?${params}`);
       const data = await response.json();
       
       setFilteredServices(data.content || []);

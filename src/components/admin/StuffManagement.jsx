@@ -3,7 +3,7 @@ import { CheckCircleIcon, XCircleIcon, EyeIcon, PencilSquareIcon, TrashIcon } fr
 import axios from 'axios';
 
 // API Service for Industrial Stuff
-const API_BASE_URL = 'http://localhost:8080/api/v1/industrial';
+const API_BASE_URL = 'http://54.173.35.19:8080/api/v1/industrial';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

@@ -25,12 +25,12 @@ const FishCard = ({ fish, onPurchaseSuccess }) => {
     }
 
     if (imagePath.startsWith('/uploads/')) {
-      const fullUrl = `http://localhost:8080${imagePath}`;
+      const fullUrl = `http://54.173.35.19:8080${imagePath}`;
       console.log("Constructed URL:", fullUrl);
       return fullUrl;
     }
 
-    const fullUrl = `http://localhost:8080/uploads/${imagePath}`;
+    const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
     console.log("Constructed URL (fallback):", fullUrl);
     return fullUrl;
   };
