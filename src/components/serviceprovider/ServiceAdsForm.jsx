@@ -15,7 +15,11 @@ const ServiceAdsForm = () => {
   const fetchServices = async () => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
+=======
+  const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -28,7 +32,11 @@ const ServiceAdsForm = () => {
   const fetchBookings = async () => {
     try {
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await fetch('http://54.173.35.19:8080/api/service-provider/services/bookings', {
+=======
+  const response = await fetch('http://54.173.35.19:8080/api/service-provider/services/bookings', {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -182,7 +190,11 @@ const BookingCard = ({ booking, onUpdate }) => {
     try {
       setIsUpdating(true);
       const token = localStorage.getItem('token');
+<<<<<<< HEAD
       const response = await fetch(`http://54.173.35.19:8080/api/service-provider/services/bookings/${booking.id}`, {
+=======
+  const response = await fetch(`http://54.173.35.19:8080/api/service-provider/services/bookings/${booking.id}`, {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -349,7 +361,11 @@ const AddServiceModal = ({ onClose, onSuccess }) => {
       console.log('Sending FormData with serviceData:', serviceData);
       console.log('Number of images:', images.length);
 
+<<<<<<< HEAD
       const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
+=======
+  const response = await fetch('http://54.173.35.19:8080/api/service-provider/services', {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL as API_BASE } from '../config';
 import axios from 'axios';
 import Footer from './home/Footer';
 
@@ -132,7 +133,11 @@ const RegistrationForm = ({ setShowLogin }) => {
   useEffect(() => {
   const fetchRoles = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get('http://54.173.35.19:8080/api/users/roles');
+=======
+  const response = await axios.get(`${API_BASE}/users/roles`);
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       // Filter out any admin role by value; update as needed based on your actual admin value
       setAvailableRoles(
         response.data.filter(role => role.value !== 'ADMIN')
@@ -306,7 +311,11 @@ const RegistrationForm = ({ setShowLogin }) => {
 
     try {
       setOtpMessage('Sending OTP...');
+<<<<<<< HEAD
       const response = await axios.get(`http://54.173.35.19:8080/api/users/send-otp?email=${formData.email}`);
+=======
+  const response = await axios.get(`${API_BASE}/users/send-otp?email=${formData.email}`);
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       setOtpMessage(response.data.message);
       setOtpSent(true);
       setOtpVerified(false);
@@ -337,7 +346,11 @@ const RegistrationForm = ({ setShowLogin }) => {
     setOtpLoading(true);
 
     try {
+<<<<<<< HEAD
       const response = await axios.post('http://54.173.35.19:8080/api/users/verify-otp', null, {
+=======
+  const response = await axios.post(`${API_BASE}/users/verify-otp`, null, {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         params: { email: formData.email, otp }
       });
       setOtpMessage(response.data.message);
@@ -454,7 +467,11 @@ const RegistrationForm = ({ setShowLogin }) => {
 
     try {
       const response = await axios.post(
+<<<<<<< HEAD
         'http://54.173.35.19:8080/api/users/register',
+=======
+  `${API_BASE}/users/register`,
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         formDataToSend,
         {
           headers: {

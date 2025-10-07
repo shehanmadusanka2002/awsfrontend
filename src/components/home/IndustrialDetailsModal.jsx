@@ -50,11 +50,19 @@ const IndustrialProductDetails = ({ industrial, onPurchaseSuccess }) => {
     }
 
     if (imagePath.startsWith('/uploads/')) {
+<<<<<<< HEAD
       const fullUrl = `http://54.173.35.19:8080${imagePath}`;
       return fullUrl;
     }
 
     const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
+=======
+  const fullUrl = `http://54.173.35.19:8080${imagePath}`;
+      return fullUrl;
+    }
+
+  const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
     return fullUrl;
   }, []);
 

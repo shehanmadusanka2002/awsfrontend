@@ -88,7 +88,11 @@ const IndustrialStuffForm = () => {
         headers['Authorization'] = `Bearer ${token}`;
       }
 
+<<<<<<< HEAD
       const response = await fetch('http://54.173.35.19:8080/api/industrial-ads', {
+=======
+  const response = await fetch('http://54.173.35.19:8080/api/industrial-ads', {
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
         method: 'POST',
         headers: headers,
         body: formDataToSend,

@@ -39,9 +39,15 @@ const ServicesSection = () => {
         size: cardsPerPage
       });
 
+<<<<<<< HEAD
       let url = 'http://54.173.35.19:8080/api/services';
       if (selectedCategory) {
         url = `http://54.173.35.19:8080/api/services/category/${selectedCategory}`;
+=======
+  let url = 'http://54.173.35.19:8080/api/services';
+      if (selectedCategory) {
+  url = `http://54.173.35.19:8080/api/services/category/${selectedCategory}`;
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       }
 
       const response = await fetch(`${url}?${params}`);
@@ -66,7 +72,11 @@ const ServicesSection = () => {
         size: cardsPerPage * 10 // Get more results for search
       });
 
+<<<<<<< HEAD
       const response = await fetch(`http://54.173.35.19:8080/api/services/search?${params}`);
+=======
+  const response = await fetch(`http://54.173.35.19:8080/api/services/search?${params}`);
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       const data = await response.json();
       
       setFilteredServices(data.content || []);

@@ -25,12 +25,20 @@ const FishCard = ({ fish, onPurchaseSuccess }) => {
     }
 
     if (imagePath.startsWith('/uploads/')) {
+<<<<<<< HEAD
       const fullUrl = `http://54.173.35.19:8080${imagePath}`;
+=======
+  const fullUrl = `http://54.173.35.19:8080${imagePath}`;
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       console.log("Constructed URL:", fullUrl);
       return fullUrl;
     }
 
+<<<<<<< HEAD
     const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
+=======
+  const fullUrl = `http://54.173.35.19:8080/uploads/${imagePath}`;
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
     console.log("Constructed URL (fallback):", fullUrl);
     return fullUrl;
   };

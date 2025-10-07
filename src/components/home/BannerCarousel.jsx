@@ -6,7 +6,11 @@ export default function BannerCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+<<<<<<< HEAD
     axios.get("http://54.173.35.19:8080/api/banners")
+=======
+  axios.get("http://54.173.35.19:8080/api/banners")
+>>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
       .then(res => {
         setBanners(res.data || []);
       })
