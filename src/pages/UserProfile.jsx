@@ -21,12 +21,6 @@ const UserProfile = () => {
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
 
-<<<<<<< HEAD
-    // API base URL
-    const API_BASE_URL = 'http://http://54.173.35.19:8080';
-
-=======
->>>>>>> d043df27f7682ead48aaa0ecc25782e98be63061
     useEffect(() => {
         // Add a small delay to ensure token is available after login
         const timer = setTimeout(() => {
